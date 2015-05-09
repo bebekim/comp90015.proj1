@@ -86,9 +86,8 @@ public class SyncServer implements Runnable {
             System.exit(EXIT_FAILURE);
             return;
         }
-
-        // Handle connections concurrently (only allow one at a time, since
-        // the HDD is likely to be the bottleneck.
+        
+        // Don't need to make a new thread, so don't.
         tcp.run();
     }
 }
