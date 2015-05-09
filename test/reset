@@ -1,0 +1,15 @@
+for f in client/*
+    do rm $f
+done
+
+for f in server/*
+    do rm $f
+done
+
+for f in client/.*
+    do rm $f
+done
+
+for f in server/.*
+    do rm $f
+done

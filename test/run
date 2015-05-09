@@ -1,0 +1,56 @@
+# creation
+>client/creation
+
+# deletion
+>client/deletion
+sleep 1
+rm client/deletion
+
+# rushed deletion
+>client/rushed_deletion
+rm client/rushed_deletion
+
+# append
+>client/append
+sleep 1
+echo "a" >>client/append
+
+# append then delete
+>client/append_then_delete
+sleep 1
+echo "ad" >>client/append_then_delete
+sleep 1
+rm client/append_then_delete
+
+# append then rushed delete
+>client/append_then_rushed_delete
+sleep 1
+echo "ard" >>client/append_then_rushed_delete
+rm client/append_then_rushed_delete
+
+# rushed append
+>client/rushed_append
+echo "ra" >>client/rushed_append
+
+# rushed append then delete
+>client/rushed_append_then_delete
+echo "rad" >>client/rushed_append_then_delete
+sleep 1
+rm client/rushed_append_then_delete
+
+# rushed append then rushed delete
+>client/rushed_append_then_rushed_delete
+echo "rard" >>client/rushed_append_then_rushed_delete
+rm client/rushed_append_then_rushed_delete
+
+sleep 1
+ls client server
+
+d=$(diff client server)
+echo $d
+
+if [$d == ""]; then
+    echo "PASS"
+else
+    echo "FAIL"
+fi
