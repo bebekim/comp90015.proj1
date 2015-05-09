@@ -70,7 +70,7 @@ public class SyncClient implements Runnable {
         Log.C("hostname: " + this.hostname);
         Log.C("port: " + this.port);
 
-        // If the folderTracker neither exists, nor can be created, abort.
+        // If the folder neither exists, nor can be created, abort.
         final File folder = new File(this.folder);
         if (!(folder.exists() || folder.mkdirs())) {
             Log.S("failed to create specified folder (" + this.folder + "); exiting.");
